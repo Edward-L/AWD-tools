@@ -1,0 +1,20 @@
+passwd 
+tar -zcvf web.tar.gz /var/www/html/
+scp 文件路径  用户名@IP:存放路径
+#查看已建立的网络连接及进程
+netstat -antulp | grep EST
+#查看指定端口被哪个进程占用
+lsof -i:端口号 或者 netstat -tunlp|grep 端口号
+#备份mysql数据库
+mysqldump -u 用户名 -p 密码 数据库名 > back.sql　　　　
+mysqldump --all-databases > bak.sql　　　　　　
+#还原mysql数据库
+mysql -u 用户名 -p 密码 数据库名 < bak.sql　　
+mysql -u 用户名 -p 密码
+sourced:\sqlfile.sql;
+crontab -l
+
+#查看页面访问排名前十的IP
+cat /var/log/apache2/access.log | cut -f1 -d   | sort | uniq -c | sort -k  -r | head -　　
+#查看页面访问排名前十的URL
+cat /var/log/apache2/access.log | cut -f4 -d   | sort | uniq -c | sort -k  -r | head -　　
