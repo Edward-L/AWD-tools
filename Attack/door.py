@@ -44,9 +44,9 @@ def submit(flag):
     
     try:
         a = requests.post(url, data=data, cookies=cookies, verify=False, timeout=10).json()
-        print a['msg']
+        print(a['msg'])
     except Exception as e:
-        print team_ip, e
+        print(e)
 
 
 
