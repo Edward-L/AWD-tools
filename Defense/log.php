@@ -12,5 +12,6 @@ $fh = fopen("/tmp/log.txt", "a+");
 fwrite($fh, $logadd);
 fwrite($fh, print_r($_COOKIE, true)."\r\n");
 fwrite($fh, $post."\r\n");
+fwrite($fh, urldecode($post)."\r\n");
 fclose($fh);
 ?>
